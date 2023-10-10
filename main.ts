@@ -9,34 +9,34 @@ let randomNumber: number = 0
 let score: number = 0
 
 input.onGesture(Gesture.Shake, function () {
-randomNumber = randint(0, 2)
+  randomNumber = randint(0, 2)
 
-// if randomNumber was 0
-if (randomNumber == 0) {
+  // if randomNumber was 0
+  if (randomNumber === 0) {
   basic.showIcon(IconNames.Scissors)
-}
+  }
 
-// if randomNumber was 1 
-if (randomNumber == 1) {
-  basic.showLeds(`
+  // if randomNumber was 1
+  if (randomNumber == 1) {
+    basic.showLeds(`
 . . . . .
 . # # # .
 . # # # .
 . # # # .
 . . . . .
 `)
-}
+  }
 
-// randomNumber was 2
-if (randomNumber == 2) {
-basic.showLeds(`
+  // randomNumber was 2
+  if (randomNumber == 2) {
+    basic.showLeds(`
 # # # # #
 # . . . #
 # . . . #
 # . . . #
 # # # # #
 `)
-}
+  }
 })
 
 input.onButtonPressed(Button.A, function () {
