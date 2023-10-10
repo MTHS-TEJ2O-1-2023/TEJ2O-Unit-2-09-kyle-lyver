@@ -6,6 +6,7 @@
 */
 
 let randomNumber: number = 0
+let score: number = 0
 
 input.onGesture(Gesture.Shake, function () {
 randomNumber = randint(0, 2)
@@ -27,4 +28,21 @@ if (randomNumber == 1) {
 }
 
 // randomNumber was 2
+if (randomNumber == 2) {
+basic.showLeds(`
+# # # # #
+# . . . #
+# . . . #
+# . . . #
+# # # # #
+`)
+}
+})
+
+input.onButtonPressed(Button.A, function () {
+  score = score + 1
+})
+
+input.onButtonPressed(Button.B, function () {
+  basic.showNumber(score)
 })
